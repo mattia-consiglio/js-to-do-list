@@ -1,3 +1,93 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,400&display=swap');
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 0.5rem;
+}
 .done {
 	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+header {
+	text-align: center;
+}
+
+section.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+input,
+button {
+	padding: 0.5rem;
+}
+
+$green: #008000;
+$red: #ff0000;
+
+form {
+	display: flex;
+
+	#newTodo {
+		border-radius: 0.5rem 0 0 0.5rem;
+		border: 1px solid #818181;
+		border-right: none;
+	}
+	#add {
+		color: $green;
+		background-color: color.adjust($green, $lightness: 40%);
+		cursor: pointer;
+		border: 1px solid #818181;
+		border-left: none;
+		border-radius: 0 0.5rem 0.5rem 0;
+	}
+}
+
+ul {
+	list-style: none;
+	width: 100%;
+	max-width: 280px;
+	margin-top: 1rem;
+	background: #e2e2e2;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	min-height: 50vh;
+	border-radius: 0.5rem;
+
+	.todo {
+		// border: 1px solid #818181;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		border-radius: 0.5rem;
+		align-items: center;
+		padding-left: 0.5rem;
+		cursor: pointer;
+		background-color: #fff;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.delete {
+			margin-left: 1rem;
+			color: $red;
+			border: none;
+			background-color: color.adjust($red, $lightness: 40%);
+			cursor: pointer;
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
+	}
 }
